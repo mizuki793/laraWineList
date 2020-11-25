@@ -16,11 +16,11 @@ class CreateWinesTable extends Migration
         Schema::create('wines', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('category');
-            $table->string('taste');
-            $table->string('food');
-            $table->integer('food_matchPt');
-            $table->string('message');
+            $table->integer('category') ->nullable();
+            $table->string('taste') ->nullable();
+            $table->string('food')->nullable();
+            $table->integer('food_matchPt')->nullable();
+            $table->string('message')->nullable();
         });
     }
     /**

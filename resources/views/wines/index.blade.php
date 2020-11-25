@@ -6,6 +6,9 @@
     <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wines.create') }}'">
                         追加
     </button>
+    <button type="button" class="btn btn-primary" onclick="location.href='{{ route('categorys.create') }}'">
+                        種類追加
+    </button>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>

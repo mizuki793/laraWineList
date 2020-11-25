@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class WineCategory extends Model
 {
     protected $fillable=[ 
-    'cid',
     'name'
     ];
+    protected $primaryKey = 'cid';
+    protected $dates = [];
+    public $timestamps = false;
 }

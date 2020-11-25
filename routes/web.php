@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WineController;
+use App\Http\Controllers\CategorysController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::get('/', function () {
 });
 
 Route::resource('wines', WineController::class);
+Route::resource('categorys', CategorysController::class);
