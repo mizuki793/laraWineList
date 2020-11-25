@@ -4,7 +4,7 @@
 <div class="container">
     <h1>新規作成</h1>
     <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wines.index') }}'">
-                    戻る
+                    ←一覧に戻る
     </button>
 </div>
     @if($errors->any())

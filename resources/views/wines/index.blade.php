@@ -4,7 +4,7 @@
 <div class="container">
     <h1>一覧</h1>
     <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wines.create') }}'">
-                        追加
+                        名前追加
     </button>
     <button type="button" class="btn btn-primary" onclick="location.href='{{ route('categorys.create') }}'">
                         種類追加
