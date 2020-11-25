@@ -14,7 +14,9 @@
         @endforeach
     </ul>
     @endif
-
+    <form action="{{ route('wines.update', $old->id)}}" method="POST">
+        @csrf
+        @method('PUT')
         <div class="form-group" style="margin: 10pt;">
             <label>名前:</label>
             <input type="text" name="name" value="{{ $old->name }}" class="form-control">
