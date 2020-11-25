@@ -12,9 +12,10 @@ class Wine extends Model
         'name',
         'category',
         'taste',
-        'foods',
+        'food',
         'food_matchPt',
         'message'
     ];
-
+    protected $dates = [];
+    public $timestamps = false;
 }

@@ -10,19 +10,23 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th> 名前 |</th>
-                    <th> 種類 |</th>
-                    <th> 味 |</th>
-                    <th> 料理 |</th>
-                    <th> 料理との相性 |</th>
-                    <th> メッセージ |</th>
+                    <th scope="col"> 名前 </th>
+                    <th scope="col"> 種類 </th>
+                    <th scope="col"> 味 </th>
+                    <th scope="col"> 料理 </th>
+                    <th scope="col"> 相性 </th>
+                    <th scope="col"> メッセージ </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($wines as $wine)
                     <tr>
-                        <td><a href="{{ route('wine.edit'.$wine->id) }}">{{ $wine->name }}</a></td>
-                        <td>{{ $wine->category }}</td>
+                        <td><a href="{{ route('wines.edit',$wine->id) }}">{{ $wine->name }}</a></td>
+                        @foreach($categorys as $cate)
+                            @if($cate->cid  === $wine->category)
+                                <td>{{ $cate->name}}</td>
+                            @endif
+                        @endforeach
                         <td>{{ $wine->taste }}</td>
                         <td>{{ $wine->food }}</td>
                         <td>{{ $wine->food_matchPt }}</td>

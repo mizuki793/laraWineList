@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>新規作成</h1>
+    <h1>編集</h1>
     <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wines.index') }}'">
                     戻る
     </button>
@@ -15,17 +15,18 @@
     </ul>
     @endif
 
-    <form action="{{ route('wines.index')}}" method="POST">
+    <form action="{{ route('wines.update')}}" method="POST">
         @csrf
+        @method('PUT')
 
         <div class="form-group" style="margin: 10pt;">
             <label>名前:</label>
-            <input type="text" name="name" value="{{old('name')}}" class="form-control">
+            <input type="text" name="name" class="form-control">
         </div>
 
         <div class="form-group" style="margin: 10pt;">
             <label>種類:</label>
-            <select name="category" value="{{old('category')}}">
+            <select name="category">
                 @foreach($categorys as $category)
                     <option value= {{ $category->cid }}>{{ $category->name }}</option>
                 @endforeach
@@ -34,17 +35,17 @@
 
         <div class="form-group" style="margin: 10pt;">
             <label>味:</label>
-            <input type="text" name="taste" value="{{old('taste')}}" class="form-control">
+            <input type="text" name="taste"  class="form-control">
         </div>
 
         <div class="form-group" style="margin: 10pt;">
             <label>合う料理:</label>
-            <input type="text" name="food" value="{{old('food')}}" class="form-control">
+            <input type="text" name="food"  class="form-control">
         </div>
 
         <div class="form-group" style="margin: 10pt;">
             <label>料理との相性:</label>
-            <select name="food_matchPt" value="{{old('food_matchPt')}}">
+            <select name="food_matchPt" >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -55,7 +56,7 @@
 
         <div class="form-group" style="margin: 10pt;">
             <label>メモ:</label>
-            <input type="text" name="message" value="{{old('name')}}" class="form-control">
+            <input type="text" name="message" class="form-control">
         </div>
 
         <input type="submit" value="登録" class="btn btn-primary">

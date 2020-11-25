@@ -16,7 +16,8 @@ class WineController extends Controller
     public function index()
     {
         $wines = Wine::all()->sortByDesc("id");
-        return view('wines.index',compact('wines'));
+        $categorys = WineCategory::all();
+        return view('wines.index',compact('wines','categorys'));
     }
 
     /**
@@ -26,7 +27,7 @@ class WineController extends Controller
      */
     public function create()
     {
-        $categorys = WineCategory::all()->sortByDesc("cid");
+        $categorys = WineCategory::all();
         return view('wines.create',compact('categorys'));
     }
 
@@ -39,7 +40,7 @@ class WineController extends Controller
     public function store(Request $request)
     {
         Wine::create($request->all());
-        return redirect()->route('wine.index')->with('success','新規登録完了');
+        return redirect()->route('wines.index')->with('success','新規登録完了');
     }
 
     /**
@@ -61,8 +62,9 @@ class WineController extends Controller
      */
     public function edit($id)
     {
-        $wine = Wine::find($id);
-        return view('wine.edit',compact('wine'));
+        $categorys = WineCategory::all();
+        $old = Wine::find($id);
+        return view('wines.edit',compact('old','categorys'));
     }
 
     /**
@@ -73,7 +75,7 @@ class WineController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    { 
         $update = [
             'name' =>$request->name,
             'category'=>$request->category,
@@ -83,7 +85,7 @@ class WineController extends Controller
             'message'=>$request->message
         ];
         Wine::where('id',$id)->update($update);
-        return back()->with('success','編集完了');
+        return redirect()->route('wines.index')->with('success','編集完了');
     }
 
     /**
