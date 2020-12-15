@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>一覧</h1>
+    <h1>wine一覧</h1>
     <button type="button" class="btn btn-primary" onclick="location.href='{{ route('wines.create') }}'">
                         名前追加
     </button>

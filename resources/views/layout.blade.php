@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
  
-        <title>Laravel</title>
+        <title>ワイン整理ツール</title>
  
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -62,11 +62,23 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .header_bar {
+                margin-top: 10px;
+                position: relative;
+                top: 0;
+                left: 5vh;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">           
- 
+        <div class="header_bar">
+            <a href="{{ route('wines.index') }}">WineList |</a>
+            <a href="{{ route('categorys.create') }}">CategoryList |</a>
+            <a href="{{ route('users.index') }}">UserList |</a>
+            </h1>
+        </div>
+
+        <div class="flex-center position-ref full-height">
             <div class="content">
                 <div>
                     @yield('content')
