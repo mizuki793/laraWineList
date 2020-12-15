@@ -19,13 +19,11 @@ use App\Http\Controllers\CategorysController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('login');
 
-Route::resource('wines', WineController::class);
-Route::resource('categorys', CategorysController::class);
-Auth::routes();
+Route::resource('wines', WineController::class)->middleware("auth");
+Route::resource('categorys', CategorysController::class)->middleware("auth");
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class,'redirectToGoogle']);
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class,'redirectToGoogle'])->name("login");
 Route::get('login/google/callback',[App\Http\Controllers\Auth\LoginController::class,'handleGoogleCallback']);
+Route::get('logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name("logout");
