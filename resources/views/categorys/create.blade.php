@@ -27,7 +27,11 @@
     </form>
 @endsection
 
-<div class="table-responsive">
+<div class="table-responsive" 
+    style="
+    position: absolute;
+    top: 15em;">
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -50,4 +54,4 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
+</div>

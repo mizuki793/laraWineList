@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WineController;
 use App\Http\Controllers\CategorysController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,12 @@ use App\Http\Controllers\CategorysController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('login');
 
-Route::resource('wines', WineController::class);
-Route::resource('categorys', CategorysController::class);
+Route::resource('wines', WineController::class)->middleware("auth");
+Route::resource('categorys', CategorysController::class)->middleware("auth");
+Route::resource('users',UsersController::class)->middleware("auth");
+
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class,'redirectToGoogle'])->name("login");
+Route::get('login/google/callback',[App\Http\Controllers\Auth\LoginController::class,'handleGoogleCallback']);
+Route::get('logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name("logout");
