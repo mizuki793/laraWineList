@@ -25,8 +25,8 @@
                 <div class="flex items-center">
                         @if (Route::has('login'))
                                 @auth
-                                    <a href="{{ url('wines') }}" class="text-sm text-gray-700 underline">wines</a>
-                                    <a href="{{ url('logout') }}" class="text-sm text-gray-700 underline">Logout</a>
+                                    <a href="{{ url('wines') }}" class="text-sm text-gray-700 underline">WineList</a>
+                                    <a href="{{ url('logout') }}" class="text-sm text-gray-700 underline"> | Logout</a>
                                 @else
                                     <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
