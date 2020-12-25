@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('test',[App\Http\Controllers\Api\test::class,'index']);
-Route::post('test',[App\Http\Controllers\Api\Line::class,'index']);
+Route::post('line',[App\Http\Controllers\Api\Line::class,'index']);
