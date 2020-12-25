@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'f456e171cc0dcd26203d17d1e0a9c42545916922',
+    'reference' => '2aa15df82fef454f3da90d4e96b2808803bc853b',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -494,7 +494,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'f456e171cc0dcd26203d17d1e0a9c42545916922',
+      'reference' => '2aa15df82fef454f3da90d4e96b2808803bc853b',
     ),
     'laravel/socialite' => 
     array (
@@ -558,6 +558,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '159c3d2bf27568f9af87d6c3f4bb616a251eb12b',
+    ),
+    'linecorp/line-bot-sdk' => 
+    array (
+      'pretty_version' => '1.6.0',
+      'version' => '1.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd827436f59d0081ce4e1e49ede4861648f8a0bca',
     ),
     'mockery/mockery' => 
     array (
