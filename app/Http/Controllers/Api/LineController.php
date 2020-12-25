@@ -15,6 +15,12 @@ use LINE\LINEBot\Event\MessageEvent\TextMessageBuilder;
 class LineConroller extends Controller
 {
 
+    public function index(){
+        $res = 'successs!!';
+        $statusCode = 200;
+        return response()->json($res, $statusCode, ['Content-Type' => 'application/json'], JSON_UNESCAPED_SLASHES);
+    }
+    
     public function webhook(Request $request)
     {
         $lineChannelSecret = env('LINE_CHANNEL_SECRET','');
