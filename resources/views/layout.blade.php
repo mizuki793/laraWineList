@@ -74,7 +74,6 @@
         <div class="header_bar">
             <a href="{{ route('wines.index') }}">WineList |</a>
             <a href="{{ route('categorys.create') }}">CategoryList |</a>
-            <a href="{{ route('users.index') }}">UserList |</a>
             </h1>
         </div>
 
