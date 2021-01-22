@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::resource('wines', WineController::class)->middleware("auth");
 Route::resource('categorys', CategorysController::class)->middleware("auth");
-Route::resource('users',UsersController::class)->middleware("auth");
+//Route::resource('users',UsersController::class)->middleware("auth");
 
 Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class,'redirectToGoogle'])->name("login");
 Route::get('login/google/callback',[App\Http\Controllers\Auth\LoginController::class,'handleGoogleCallback']);
